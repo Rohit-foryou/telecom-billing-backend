@@ -108,6 +108,7 @@ GENERATED → PAID → OVERDUE
 - Role-based authorization:
     - ADMIN
     - SUPPORT
+    - CUSTOMER
 
 ## 👨‍💻 Author
 **Rohit Kumar**  
