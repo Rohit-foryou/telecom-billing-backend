@@ -1,25 +1,37 @@
-# Telecom Subscription & Billing System (Backend)
+# 📡 Telecom Subscription & Billing System (Backend)
 
-## Tech Stack
+## 📌 Overview
+This project is a backend system designed to manage telecom customers,
+subscriptions (SIMs), plans, usage tracking, and billing lifecycle.
+
+The project focuses on real-world telecom business rules and clean backend design.
+
+---
+
+## 🧱 Tech Stack
+- Java 17
 - Spring Boot
+- Spring Web
 - Spring Security
-- JPA / Hibernate
-- PostgreSQL
-- JWT Authentication
+- JWT Authentication (planned)
+- JPA / Hibernate (planned)
+- PostgreSQL (planned)
+- Maven
 
-## Modules
+---
+
+## 📦 Core Modules
 - Customer Management
-- Subscription Lifecycle
-- Plan Management
+- Subscription Lifecycle Management
+- Plan Management (Prepaid / Postpaid)
+- Usage Tracking
 - Billing Engine
 
-## Status
-🚧 In Progress
+---
 
 ## 🗄️ Database Design (Conceptual)
-### 1️⃣ Customer
-Represents a telecom customer.
-- customer
+
+### customer
 - id (PK)
 - name
 - email
@@ -28,11 +40,9 @@ Represents a telecom customer.
 - status (ACTIVE, SUSPENDED)
 - created_at
 
-
 ---
 
-### 2️⃣ Subscription
-Represents a SIM / telecom connection.
+### subscription
 - id (PK)
 - customer_id (FK)
 - msisdn (phone number)
@@ -42,12 +52,9 @@ Represents a SIM / telecom connection.
 - activation_date
 - expiry_date
 
-
 ---
 
-### 3️⃣ Plan
-Defines billing and usage rules.
-- plan
+### plan
 - id (PK)
 - name
 - type (PREPAID, POSTPAID)
@@ -58,22 +65,18 @@ Defines billing and usage rules.
 - sms_limit
 - active
 
-
 ---
 
-### 4️⃣ Usage Record
-Tracks usage data for billing calculations.
+### usage_record
 - id (PK)
 - subscription_id (FK)
 - usage_type (DATA, CALL, SMS)
 - units
 - usage_date
 
-
 ---
 
-### 5️⃣ Bill
-Generated for postpaid subscriptions.
+### bill
 - id (PK)
 - subscription_id (FK)
 - billing_month
@@ -81,15 +84,13 @@ Generated for postpaid subscriptions.
 - status (GENERATED, PAID, OVERDUE)
 - generated_date
 
-
 ---
 
 ## 🔗 Entity Relationships
-- Customer 1 ──── * Subscription
-- Plan 1 ──── * Subscription
-- Subscription 1 ──── * UsageRecord
-- Subscription 1 ──── * Bill
-
+Customer     1 ---- * Subscription  
+Plan         1 ---- * Subscription  
+Subscription 1 ---- * Usage_Record  
+Subscription 1 ---- * Bill
 
 ---
 
@@ -98,9 +99,10 @@ Generated for postpaid subscriptions.
 ### Subscription Lifecycle
 NEW → ACTIVE → SUSPENDED → TERMINATED
 
-
 ### Bill Lifecycle
 GENERATED → PAID → OVERDUE
+
+---
 
 ## 🔐 Security (Planned)
 - Spring Security
@@ -110,10 +112,23 @@ GENERATED → PAID → OVERDUE
     - SUPPORT
     - CUSTOMER
 
+---
+
+## 📂 Documentation
+Additional documentation is available in the `docs/` folder:
+- docs/architecture.md
+- docs/workflow.md
+
+---
+
+## 🚧 Project Status
+- Backend setup completed
+- Database design finalized
+- API design in progress
+- JPA & PostgreSQL integration pending
+
+---
+
 ## 👨‍💻 Author
-**Rohit Kumar**  
+Rohit Kumar  
 Backend Developer | Java | Spring Boot
-
-
-
-
