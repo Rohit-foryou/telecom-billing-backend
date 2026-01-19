@@ -8,6 +8,13 @@ The project focuses on real-world telecom business rules and clean backend desig
 
 ---
 
+## 📌 Setup
+Create a .env file with variables
+DB_URL=jdbc:postgresql://localhost:5432/db_name
+DB_USERNAME=username
+DB_PASSWORD=password
+
+---
 ## 🧱 Tech Stack
 - Java 17
 - Spring Boot
@@ -130,5 +137,4 @@ Additional documentation is available in the `docs/` folder:
 ---
 
 ## 👨‍💻 Author
-Rohit Kumar  
-Backend Developer | Java | Spring Boot
+Rohit Kumar | Aryan Kodinya
