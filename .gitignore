@@ -13,6 +13,9 @@ target/
 .springBeans
 .sts4-cache
 
+### Environmental Variable ###
+.env
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
